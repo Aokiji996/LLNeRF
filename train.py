@@ -19,7 +19,7 @@ from collections.abc import Iterable
 import gc
 import os
 import time
-# import tensorflow
+import tensorflow as tf
 import ipdb
 from absl import app
 import flax
@@ -42,6 +42,9 @@ import numpy as np
 print('Current device used by JAX:', jax.devices()[0].platform)
 # os.system('nvidia-smi')
 
+
+config = tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(allow_growth=True))
+sess = tf.compat.v1.Session(config=config)
 configs.define_common_flags()
 jax.config.parse_flags_with_absl()
 

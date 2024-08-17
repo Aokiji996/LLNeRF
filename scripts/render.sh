@@ -2,14 +2,13 @@
 
 # *** Please replace /path/to/dataset with your dataset path 
 # and replace scene_name with your scene name.
-
 python -m render \
 --gin_configs=configs/llff_illunerf.gin \
---gin_bindings="Config.data_dir = '/path/to/dataset/scene_name'" \
---gin_bindings="Config.checkpoint_dir = './nerf_results/llnerf/llnerf__scene_name'" \
+--gin_bindings="Config.data_dir = '/home/ubuntu/hjw/Datasets/llnerf-dataset/still2'" \
+--gin_bindings="Config.checkpoint_dir = './nerf_results/llnerf/still2'" \
 --gin_bindings="Config.render_path = True" \
 --gin_bindings="Config.batch_size = 1024" \
---gin_bindings="Config.render_dir = './nerf_results/llnerf/llnerf__scene_name/render/'" \
+--gin_bindings="Config.render_dir = './nerf_results/llnerf/still2/render/'" \
 --gin_bindings="Config.render_path_frames = 120" \
 --gin_bindings="Config.render_video_fps = 30" \
 --gin_bindings="Config.rawnerf_mode = False" \
